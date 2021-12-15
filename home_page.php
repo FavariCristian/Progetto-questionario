@@ -2,17 +2,6 @@
 include('template_header.php');
 ?>
 
-<section id="sidebar">
-    <div class="inner">
-        <nav>
-            <ul>
-                <li><a href="#intro">Benvenuto</a></li>
-                <li><a href="#one">Questionari</a></li>
-            </ul>
-        </nav>
-    </div>
-</section>
-
 <div id="wrapper">
 
     <section id="intro" class="wrapper style1 fullscreen fade-up">
@@ -27,7 +16,6 @@ include('template_header.php');
 
     <section id="one" class="wrapper style2 spotlights">
         <section>
-            <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
             <div class="content">
                 <div class="inner">
                     <h2>Matematica</h2>
@@ -37,9 +25,6 @@ include('template_header.php');
                     </ul>
                 </div>
             </div>
-        </section>
-        <section>
-            <a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
             <div class="content">
                 <div class="inner">
                     <h2>Inforatica</h2>
@@ -51,7 +36,6 @@ include('template_header.php');
             </div>
         </section>
         <section>
-            <a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
             <div class="content">
                 <div class="inner">
                     <h2>Storia</h2>
@@ -63,7 +47,6 @@ include('template_header.php');
             </div>
         </section>
         <section>
-            <a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
             <div class="content">
                 <div class="inner">
                     <h2>Altro</h2>

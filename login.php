@@ -1,18 +1,22 @@
 <?php
+session_start();
+
 include('template_header.php');
 include('dal_questionario.php');
-?>
-<p></p>
-<div class="container">
-    <h2>Per accedere a questo contenuto devi registrarti</h2>
 
-    <form action="registrazione.php" method="post">
-        <label>Inserisci il tuo nome: </label>
-        <input type="text" id="user">
-        <br />
-        <button type="submit">Invia</button>
-    </form>
-</div>
+if (isset($_POST["username"])) {
+    $_SESSION["username"] = $_POST["username"];
+    registrazione();
+    header('Location:il_mio_profilo.php');
+}
+?>
+<br>
+<form action="login.php" method="post">
+    <label>Inserisci il tuo nome: </label>
+    <input type="text" id="username" name="username">
+    <br />
+    <button href="logout.php">Conferma</button>
+</form>
 
 <?php
 include('template_footer.php');

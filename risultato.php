@@ -37,13 +37,13 @@ $lista_risposte = segna_risposte($domande);
 $punteggio = confronta_risposte($lista_risposte, $id_questionario);
 registra_questionario($punteggio, $_SESSION['id_utente'][0]['id_utente'], $id_questionario);
 
-//var_dump($punteggio);
-//var_dump(extract($_SESSION['id_utente']));
-//var_dump($_SESSION['id_utente']);
-var_dump($_SESSION['id_utente'][0]['id_utente']);
-//var_dump()
-//var_dump($id_questionario);
-//echo serialize($_SESSION["id_utente"]);
+//var_dump($_SESSION['id_utente'][0]['id_utente']);
+
+$punti = trova_punteggio($_SESSION['id_utente'][0]['id_utente']);
+$punti['punti'] += $punteggio; 
+var_dump($punti);
+aggiorna_punteggio($_SESSION['id_utente'][0]['id_utente'], $punti);
+//aggiorna_punteggio($_SESSION['id_utente'][0]['id_utente'], $punteggio);
 ?>
 
 <?php

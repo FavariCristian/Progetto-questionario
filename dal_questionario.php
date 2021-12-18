@@ -75,6 +75,23 @@ function registra_questionario($punteggio, $id_utente, $id_questionario)
 {
     $mysqli = db_connect();
     $sql = "INSERT INTO `questionario_svolto` (`id_questionario_svolto`, `punteggio`, `id_utente`, `id_questionario`) VALUES (NULL, '$punteggio', '$id_utente', '$id_questionario')";
+    $mysqli->query($sql);
+    $mysqli->close();
+}
+
+function trova_punteggio($id_utente){
+    $mysqli=db_connect();
+    $sql="SELECT punti FROM utente WHERE id_utente = '$id_utente'";
     $result = $mysqli->query($sql);
-    $result = $mysqli->close();
+    $punti = $result->fetch_all(MYSQLI_ASSOC)[0];
+    $result->free();
+    $mysqli->close();
+    return $punti;
+}
+
+function aggiorna_punteggio($id_utente, $punti){
+    $mysqli=db_connect();
+    $sql="UPDATE `utente` SET `punti`= $punti[punti] WHERE id_utente='$id_utente'";
+    $mysqli->query($sql);
+    $mysqli->close();
 }

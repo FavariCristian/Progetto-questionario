@@ -35,11 +35,15 @@ function confronta_risposte($lista_risposte, $id_questionario)
 
 $lista_risposte = segna_risposte($domande);
 $punteggio = confronta_risposte($lista_risposte, $id_questionario);
-registra_questionario($punteggio, $_SESSION["id_utente"], $id_questionario);
+registra_questionario($punteggio, $_SESSION['id_utente'][0]['id_utente'], $id_questionario);
 
 //var_dump($punteggio);
-//var_dump($_SESSION["id_utente"]);
+//var_dump(extract($_SESSION['id_utente']));
+//var_dump($_SESSION['id_utente']);
+var_dump($_SESSION['id_utente'][0]['id_utente']);
+//var_dump()
 //var_dump($id_questionario);
+//echo serialize($_SESSION["id_utente"]);
 ?>
 
 <?php

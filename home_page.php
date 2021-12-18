@@ -21,27 +21,16 @@ include('template_header.php');
                     <h2>Matematica</h2>
                     <p>Domande di matematica</p>
                     <ul class="actions">
-                        <li><a href="questionario.php" class="button">Prova</a></li>
+                        <li><a href="questionario.php?id_questionario=1" class="button">Prova</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="content">
-                <div class="inner">
-                    <h2>Inforatica</h2>
-                    <p>Domande di informatica</p>
-                    <ul class="actions">
-                        <li><a href="questionario.php" class="button">Prova</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section>
             <div class="content">
                 <div class="inner">
                     <h2>Storia</h2>
                     <p>Domande di storia</p>
                     <ul class="actions">
-                        <li><a href="questionario.php" class="button">Prova</a></li>
+                        <li><a href="questionario.php?id_questionario=2" class="button">Prova</a></li>
                     </ul>
                 </div>
             </div>

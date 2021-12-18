@@ -6,15 +6,16 @@ $questionario = select_all_questionari();
 
 <table>
     <tr>
-        <th>Tema</th>
         <th>ID</th>
+        <th>Tema</th>
+        <th></th>
     </tr>
     <?php
     foreach($questionario as $row){
     ?>
     <tr>
-        <td><?=$row['tema']?></td>
         <td><?=$row['id_questionario']?></td>
+        <td><?=$row['tema']?></td>
         <td><a href="questionario.php?id_questionario=<?=$row['id_questionario']?>">Svolgi</a></td>
     </tr>
     <?php

@@ -95,3 +95,25 @@ function aggiorna_punteggio($id_utente, $punti){
     $mysqli->query($sql);
     $mysqli->close();
 }
+
+function seleziona_tema($id_questionario)
+{
+    $mysqli = db_connect();
+    $sql = "SELECT q.tema FROM questionario as q INNER JOIN questionario_svolto as s ON q.id_questionario = s.id_questionario WHERE s.id_questionario = $id_questionario";
+    $result = $mysqli->query($sql);
+    $data = $result->fetch_all(MYSQLI_ASSOC);
+    $result->free();
+    $mysqli->close();
+    return $data;
+}
+
+function select_all_questionari_svolti()
+{
+    $mysqli = db_connect();
+    $sql = "SELECT * FROM questionario_svolto ORDER BY id_questionario_svolto";
+    $result = $mysqli->query($sql);
+    $data = $result->fetch_all(MYSQLI_ASSOC);
+    $result->free();
+    $mysqli->close();
+    return $data;
+}

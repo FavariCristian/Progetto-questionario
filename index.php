@@ -6,7 +6,7 @@ include('template_header.php');
 
     <section id="intro" class="wrapper style1 fullscreen fade-up">
         <div class="inner">
-            <h1>Il Questionario</h1>
+            <h2>Il Questionario</h2>
             <p>Le domande sempre a portata di un click</p>
             <ul class="actions">
                 <li><a href="#one" class="button scrolly">Vedi</a></li>

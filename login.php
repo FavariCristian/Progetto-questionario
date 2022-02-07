@@ -7,7 +7,8 @@ include('dal_questionario.php');
 if (isset($_POST["username"])) {
     $_SESSION["username"] = $_POST["username"];
     registra_utente();
-    $_SESSION["id_utente"] = trova_id_utente();
+    $id = trova_id_utente();
+    $_SESSION["id_utente"] = $id[0]["id_utente"];
     header('Location:il_mio_profilo.php');
 }
 ?>

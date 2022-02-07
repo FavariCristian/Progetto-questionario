@@ -2,6 +2,7 @@
 include('template_header.php');
 include('dal_questionario.php');
 $questionario = select_all_questionari();
+$id = trova_id_utente();
 ?>
 
 <table>
@@ -11,13 +12,13 @@ $questionario = select_all_questionari();
         <th></th>
     </tr>
     <?php
-    foreach($questionario as $row){
+    foreach ($questionario as $row) {
     ?>
-    <tr>
-        <td><?=$row['id_questionario']?></td>
-        <td><?=$row['tema']?></td>
-        <td><a href="questionario.php?id_questionario=<?=$row['id_questionario']?>">Svolgi</a></td>
-    </tr>
+        <tr>
+            <td><?= $row['id_questionario'] ?></td>
+            <td><?= $row['tema'] ?></td>
+            <td><a href="questionario.php?id_questionario=<?= $row['id_questionario'] ?>">Svolgi</a></td>
+        </tr>
     <?php
     }
     ?>

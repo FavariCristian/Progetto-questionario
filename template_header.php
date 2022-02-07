@@ -13,7 +13,9 @@
 
 <body class="is-preload">
     <header id="header">
-        <h1>Il Questionario</h1>
+        <h1>
+            <a href="index.php">Il Questionario</a>
+        </h1>
         <nav>
             <ul>
                 <li><a href="index.php" class="active">Home</a></li>

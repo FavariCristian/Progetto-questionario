@@ -12,12 +12,11 @@
 </head>
 
 <body class="is-preload">
-
     <header id="header">
         <h1>Il Questionario</h1>
         <nav>
             <ul>
-                <li><a href="home_page.php" class="active">Home</a></li>
+                <li><a href="index.php" class="active">Home</a></li>
                 <li><a href="tutti_questionari.php" class="active">Questionari</a></li>
                 <li><a href="il_mio_profilo.php" class="active">Profilo</a></li>
             </ul>

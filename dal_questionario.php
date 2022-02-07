@@ -1,8 +1,9 @@
 <?php
+
 function db_connect()
 {
     set_time_limit(100);
-    $mysqli = new mysqli("localhost", "questionari", "password.123", "questionari");
+    $mysqli = new mysqli(SERVER,USER,PASS,DB);
     if ($mysqli->connect_error) {
         die('Connection failed. Error: ' . $mysqli->connect_error);
     }

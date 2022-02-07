@@ -17,7 +17,7 @@ $domande = trova_domande($id_questionario);
 function segna_risposte($domande)
 {
     $lista_risposte = [];
-    foreach($domande as $d)
+    foreach ($domande as $d)
         array_push($lista_risposte, $_POST[$d['id_domanda']]);
     //var_dump($lista_risposte);
     return ($lista_risposte);
@@ -40,12 +40,18 @@ registra_questionario($punteggio, $_SESSION['id_utente'][0]['id_utente'], $id_qu
 //var_dump($_SESSION['id_utente'][0]['id_utente']);
 
 $punti = trova_punteggio($_SESSION['id_utente'][0]['id_utente']);
-$punti['punti'] += $punteggio; 
-var_dump($punti);
+$punti['punti'] += $punteggio; ?>
+</br>
+<h4><?php echo ('Hai ottenuto ' . $punti['punti'] . ' punti'); ?></h4>
+<?php
+$punti['punti'] += $punteggio;
 aggiorna_punteggio($_SESSION['id_utente'][0]['id_utente'], $punti);
 //aggiorna_punteggio($_SESSION['id_utente'][0]['id_utente'], $punteggio);
 ?>
-
+</br>
+<form action="tutti_questionari.php">
+    <button type="submit">Torna ai questionari</button>
+</form>
 <?php
 include('template_footer.php');
 ?>

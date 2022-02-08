@@ -84,7 +84,6 @@ function registra_questionario($punteggio, $id_utente, $id_questionario)
     $punteggio = intval($punteggio);
     $id_utente = intval($id_utente);
     $id_questionario = intval($id_questionario);
-    var_dump($id_utente);
     $sql = "INSERT INTO `questionario_svolto` (`id_questionario_svolto`, `punteggio`, `id_utente`, `id_questionario`) 
         VALUES (NULL, '$punteggio', '$id_utente', '$id_questionario')";
     $mysqli->query($sql);
@@ -97,7 +96,7 @@ function trova_punteggio($id_utente)
     $id_utente = intval($id_utente);
     $sql = "SELECT punti FROM utente WHERE id_utente = '$id_utente'";
     $result = $mysqli->query($sql);
-    $punti = $result->fetch_all(MYSQLI_ASSOC)[0];
+    $punti = $result->fetch_all(MYSQLI_ASSOC);
     $result->free();
     $mysqli->close();
     return $punti;

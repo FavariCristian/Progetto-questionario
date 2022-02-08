@@ -31,19 +31,21 @@ function confronta_risposte($lista_risposte, $id_questionario)
     return $punteggio;
 }
 
-//$lista_risposte = segna_risposte($domande);
 $punteggio = confronta_risposte(segna_risposte($domande), $id_questionario);
-registra_questionario($punteggio, $_SESSION['id_utente']['id_utente'], $id_questionario);
+registra_questionario($punteggio, $_SESSION['id_utente'], $id_questionario);
 
-$punti_totali = trova_punteggio($_SESSION['id_utente']['id_utente']);
+$punti_totali = trova_punteggio($_SESSION['id_utente']);
 ?>
 
 </br>
 <h4><?php echo ('Hai ottenuto ' . $punteggio . ' punti'); ?></h4>
 
 <?php
-$punti_totali['punti'] += $punteggio;
-aggiorna_punteggio($_SESSION['id_utente']['id_utente'], $punti_totali);
+if (isset($punti_totali)) {
+    $punti = $punti_totali + $punteggio;
+    aggiorna_punteggio($_SESSION['id_utente'], $punti);
+} else
+    aggiorna_punteggio($_SESSION['id_utente'], $punteggio);
 ?>
 
 </br>
